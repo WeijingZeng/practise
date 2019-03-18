@@ -1,0 +1,67 @@
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+body{
+    margin: 0;/*消除body默认有8px的margin*/
+}
+
+a{
+    text-decoration: none; /*去掉下划线*/
+}
+
+.topNavBar{
+    padding-top: 20px; /*使navbar整体向下移动*/
+    padding-bottom: 20px;/*为了使上下空隙对称*/
+    padding-left: 16px;
+    padding-right: 16px;
+    /* 上面代码可以简化为 padding: 20px 16px 20px 16px; (上右下左) */
+}
+
+.topNavBar>nav{
+    padding-top: 7px;
+}
+
+.topNavBar>nav>ul{
+    list-style: none; /*消除列表的bullet point*/
+    margin: 0; /*除了div和span其他标签都有默认样式*/
+    padding: 0; /*消除margin和padding的默认样式*/
+}
+
+.topNavBar>nav>ul>li{
+    float: left;
+    margin-left: 17px;
+    margin-right: 17px; /*经测量两个li元素之间有34px的间距，所以每个li元素左右分别给17px*/
+}
+
+.topNavBar>nav>ul>li>a{
+    font-size: 14px;
+    color: #9A9DA1;
+    font-weight: bold; /*字体加粗*/
+    border-bottom: 3px solid transparent; /*先占位，因为a:hover加边框后两元素间距增加，产生一个抖动效果，为了消除这个效果就先加一个透明边框*/
+    padding-top: 5px;
+    padding-bottom: 5px;/*为a增加上下边距，使下边框与a元素有一定距离*/
+    display: block;/*加入边距后li的高度<a的高度，li没有包住a，加入block后解决该问题*/
+}
+
+.topNavBar>nav>ul>li>a:hover{ /*hover:鼠标悬停*/
+    border-bottom: 3px solid rgb(244, 135, 133); /*1像素的实心下边框*/
+}
+/*logo和nav两个class之前高都为33，现在为了使nav的底线与logo对齐，分别给两个元素再加7px到40的高，再通过调整padding-top/bottom来使两个元素高度对齐*/
+.topNavBar .logo{
+    font-size: 24px;
+    font-family: "arial black";
+    padding-top: 2px;
+    padding-bottom: 5px;
+}
+
+.topNavBar .logo .rs{
+    margin-right: 4px;
+    color: rgb(244, 135, 133);
+}
+
+.topNavBar .logo .card{
+    color: #9A9DA2;
+}
