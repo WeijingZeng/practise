@@ -6,6 +6,7 @@
 
 body{
     margin: 0;/*消除body默认有8px的margin*/
+    background-color: #efefef;
 }
 
 a{
@@ -15,28 +16,36 @@ a{
 .topNavBar{
     padding-top: 20px; /*使navbar整体向下移动*/
     padding-bottom: 20px;/*为了使上下空隙对称*/
-    padding-left: 16px;
-    padding-right: 16px;
+    /* padding-left: 16px;
+    padding-right: 16px; */
     /* 上面代码可以简化为 padding: 20px 16px 20px 16px; (上右下左) */
+    position: fixed;/* 使其脱离文档流 */
+    width: 100%; /*不到万不得已不用width，因为这里脱离文档流后元素宽度会内缩，所以只能强制宽度占满*/
+    /* 因为宽度已经100%，再加上padding-left/right的16px就会超出宽度，所以在这里取消左右边距，再单独加一个div来设置左右边距 */
+    
 }
 
-.topNavBar>nav{
+.topNavBar .topNavBar-inner{
+    padding: 0 16px 0 16px; /*因为width的bug而新加的div，专门设置nav的左右边距以实现原来padding: 20px 16px 20px 16px 的效果*/
+}
+
+.topNavBar nav{
     padding-top: 7px;
 }
 
-.topNavBar>nav>ul{
+.topNavBar nav>ul{
     list-style: none; /*消除列表的bullet point*/
-    margin: 0; /*除了div和span其他标签都有默认样式*/
-    padding: 0; /*消除margin和padding的默认样式*/
+    margin: 0; /*margin:外边距 除了div和span其他标签都有默认样式*/
+    padding: 0; /*padding:内边距 消除margin和padding的默认样式*/
 }
 
-.topNavBar>nav>ul>li{
+.topNavBar nav>ul>li{
     float: left;
     margin-left: 17px;
     margin-right: 17px; /*经测量两个li元素之间有34px的间距，所以每个li元素左右分别给17px*/
 }
 
-.topNavBar>nav>ul>li>a{
+.topNavBar nav>ul>li>a{
     font-size: 14px;
     color: #9A9DA1;
     font-weight: bold; /*字体加粗*/
@@ -46,7 +55,7 @@ a{
     display: block;/*加入边距后li的高度<a的高度，li没有包住a，加入block后解决该问题*/
 }
 
-.topNavBar>nav>ul>li>a:hover{ /*hover:鼠标悬停*/
+.topNavBar nav>ul>li>a:hover{ /*hover:鼠标悬停*/
     border-bottom: 3px solid rgb(244, 135, 133); /*1像素的实心下边框*/
 }
 /*logo和nav两个class之前高都为33，现在为了使nav的底线与logo对齐，分别给两个元素再加7px到40的高，再通过调整padding-top/bottom来使两个元素高度对齐*/
@@ -64,4 +73,42 @@ a{
 
 .topNavBar .logo .card{
     color: #9A9DA2;
+}
+
+.banner{
+    background-image: url(./img/cover.jpg);
+    height: 515px; /* 不到万不得已不用height，因为这里的div里没有文档流元素，所以只能自己设置高度 */
+    background-position: center center; /*背景图片居中 第一个center是水平方向 第二个center是垂直方向*/
+    background-size: cover; /*背景图片自适应大小*/
+}
+
+.banner .mask{
+    height: 515px;
+    background-color: rgba(0,0,0,0.5) /*设置黑色蒙版 0.8是透明程度*/
+}
+
+.userCard{
+    background-color: #FFFFFF;
+    /* border: 1px solid red; */
+    max-width: 940px;/*用最大宽度，当屏幕小于最大宽度时元素会自适应，如何只用 width 就不会自适应*/
+    margin-right: auto;
+    margin-left: auto;/*如果一个 div 设置了宽度，想让该div居中只要 margin-right/left: auto 就可以了*/
+}
+
+.userCard .greeting{
+    background-color: #c88ef7;
+    color: white;
+    padding: 4px 16px;
+    position: relative;/*给父元素一个相对定位，让 absolute子元素根据父元素定位*/
+}
+
+.userCard .greeting .triangle{
+    display: block;
+    border: 10px solid transparent;
+    width: 0px;
+    left: 4px;
+    border-left-color: #c88ef7;
+    border-top-width: 0px;
+    position: absolute;/*绝对定位--脱离文档流但是仍然根据父元素定位*/
+    top: 100%; /*让小三角正好在hello的边框下，距上面100%的高度*/
 }

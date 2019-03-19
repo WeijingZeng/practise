@@ -5,48 +5,52 @@
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <div class="topNavBar clearfix">
-      <a class="logo" href="#" alt="logo" style="float:left;">
-        <span class="rs">RS</span><span class="card">card</span><!--两个span元素中间如果有换行，显示时浏览器会自动加一个空格在两元素中间-->
-      </a>
-      <nav style="float: right;">
-        <ul class="clearfix">
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">SKILLS</a></li>
-          <li><a href="#">EXPERIENCE</a></li>
-          <li><a href="#">PRICING</a></li>
-          <li><a href="#">BLOG</a></li>
-          <li><a href="#">CALDENDAR</a></li>
-          <li><a href="#">CONTACT</a></li>
-          <li><a href="#">OTHER</a></li>
-          <li><a href="#">ALL DEMOS</a></li>
-        </ul>
-      </nav>
+    <div class="topNavBar">
+      <div class="topNavBar-inner clearfix">
+          <a class="logo" href="#" alt="logo" style="float:left;">
+              <span class="rs">RS</span><span class="card">card</span><!--两个span元素中间如果有换行，显示时浏览器会自动加一个空格在两元素中间-->
+            </a>
+            <nav style="float: right;">
+              <ul class="clearfix">
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="#">SKILLS</a></li>
+                <li><a href="#">EXPERIENCE</a></li>
+                <li><a href="#">PRICING</a></li>
+                <li><a href="#">BLOG</a></li>
+                <li><a href="#">CALDENDAR</a></li>
+                <li><a href="#">CONTACT</a></li>
+                <li><a href="#">OTHER</a></li>
+                <li><a href="#">ALL DEMOS</a></li>
+              </ul>
+            </nav>
+      </div>
     </div>
-    <div class="banner" style="background-image: url(#)"></div>
+    <div class="banner">
+      <div class="mask"></div>
+    </div>
     <main>
       <div class="userCard">
           <div class="pictureAndText">
             <div class="picture">
-              <img src="" alt="Profile Photo">
+              <img src="./img/selfie.JPEG" width="299" height="299" alt="Profile Photo">
             </div>
-            <div class="text">
-              <div class="profile">
-                  <span class="greeting">Hello</span>
-                  <h1>Weijing Zeng</h1>
-                  <p>Front-end Web Developer</p>
-                  <hr>
-                  <dl>
-                    <dt>AGE</dt>
-                    <dd>20</dd>
-                    <dt>ADDRESS</dt>
-                    <dl>Guiyang</dl>
-                    <dt>EMAIL</dt>
-                    <dl>zwjandhh@gmail.com</dl>
-                    <dt>PHONE</dt>
-                    <dl>***-***-****</dl>
-                  </dl>
-              </div>
+            <div class="profile">
+                <span class="greeting">Hello
+                  <span class="triangle"></span>
+                </span>
+                <h1>Weijing Zeng</h1>
+                <p>Front-end Web Developer</p>
+                <hr>
+                <dl>
+                  <dt>AGE</dt>
+                  <dd>20</dd>
+                  <dt>ADDRESS</dt>
+                  <dd>Guiyang</dd>
+                  <dt>EMAIL</dt>
+                  <dd>zwjandhh@gmail.com</dd>
+                  <dt>PHONE</dt>
+                  <dd>***-***-****</dd>
+                </dl>
             </div>
           </div>
             <footer class="social-media">
