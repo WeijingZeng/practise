@@ -9,9 +9,27 @@ body{
     background-color: #efefef;
 }
 
+*{ /*消除所有元素的默认边距*/
+    margin: 0;
+    padding: 0;
+}
+
 a{
     text-decoration: none; /*去掉下划线*/
 }
+
+hr{ /*重写hr样式*/
+    height: 0;
+    border: none;
+    border-top: 1px solid #dedede;
+}
+
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+ }
 
 .topNavBar{
     padding-top: 20px; /*使navbar整体向下移动*/
@@ -68,7 +86,7 @@ a{
 
 .topNavBar .logo .rs{
     margin-right: 4px;
-    color: rgb(244, 135, 133);
+    color: #5fd0ce;
 }
 
 .topNavBar .logo .card{
@@ -98,6 +116,7 @@ a{
 .userCard .greeting{
     background-color: #c88ef7;
     color: white;
+    display: inline-block;
     padding: 4px 16px;
     position: relative;/*给父元素一个相对定位，让 absolute子元素根据父元素定位*/
 }
@@ -111,4 +130,64 @@ a{
     border-top-width: 0px;
     position: absolute;/*绝对定位--脱离文档流但是仍然根据父元素定位*/
     top: 100%; /*让小三角正好在hello的边框下，距上面100%的高度*/
+}
+
+.userCard .pictureAndText{
+    padding: 50px;
+}
+
+.userCard .picture{
+    float: left;
+}
+
+.userCard .profile{
+    float: left; /*都在left是因为picture和profile要挨在一起，都是靠左的*/
+    margin-left: 65px;
+    width: 470px; /*hr分割线的宽度，注意宽度一定不能超过容器，自己调节宽度来适应容器*/
+}
+
+.userCard .profile h1{
+    margin-top: 26px;
+}
+
+.userCard .profile hr{
+    margin: 20px 0; /*上下20 左右0*/
+}
+
+.userCard dl dt,
+.userCard dl dd{
+    float: left;
+    padding: 5px 0;
+}
+.userCard dl dt{
+    width: 30%;
+    font-weight: bold;
+}
+.userCard dl dd{
+    width: 70%;
+    color: #9a9da1;
+}
+
+.userCard>footer.social-media{
+    background-color: #c88ef7;
+    text-align: center;
+}
+
+.userCard>footer.social-media>a{
+    display: inline-block;
+    border-radius: 50%; /*圆形*/
+    line-height: 30px;
+    padding: 5px 5px;
+    margin: 16px;
+}
+
+.userCard>footer.social-media>a:hover{
+    background: #89cccb;
+}
+
+.userCard svg{
+    width: 30px;
+    height: 30px;
+    fill: #5fd0ce;
+    vertical-align: top;
 }
