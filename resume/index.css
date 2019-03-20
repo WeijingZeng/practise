@@ -188,6 +188,6 @@ hr{ /*重写hr样式*/
 .userCard svg{
     width: 30px;
     height: 30px;
-    fill: #5fd0ce;
+    fill: white;
     vertical-align: top;
 }
