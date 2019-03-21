@@ -31,6 +31,8 @@ hr{ /*重写hr样式*/
     overflow: hidden;
  }
 
+
+
 .topNavBar{
     padding-top: 20px; /*使navbar整体向下移动*/
     padding-bottom: 20px;/*为了使上下空隙对称*/
@@ -111,6 +113,8 @@ hr{ /*重写hr样式*/
     max-width: 940px;/*用最大宽度，当屏幕小于最大宽度时元素会自适应，如何只用 width 就不会自适应*/
     margin-right: auto;
     margin-left: auto;/*如果一个 div 设置了宽度，想让该div居中只要 margin-right/left: auto 就可以了*/
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+    /*1: horizontal offset 2: vertical offset 3: blur radius 4: spread radius 5: color*/
 }
 
 .userCard .greeting{
@@ -190,4 +194,39 @@ hr{ /*重写hr样式*/
     height: 30px;
     fill: white;
     vertical-align: top;
+}
+
+body > main{
+    margin-top: -315px;
+}
+
+body > main .downloadButton{/*因为没有固定宽度，所以加margin：auto不能居中，这种情况下内联元素想要居中在他的父元素上加居中。*/
+    font-size: 14px;
+    line-height: 16px;
+    border: 1px solid #dbdada;
+    border-radius: 2px;
+    color: #3d4451;
+    font-weight: bold;
+    padding: 21px 55px;
+    margin: 30px;
+    display: inline-block;
+    transition: box-shadow 0.3s; /*为hover后的阴影加过度，显得不那么突兀*/
+}
+
+body > main .downloadButton-wrapper{/*创建一个downloadButton的父元素设置居中*/
+    text-align: center;
+} 
+
+body > main .downloadButton:hover{
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+}
+
+body > main .introduction{
+    max-width: 940px;/*和上面usercard的宽度要一致，所以直接copy usercard的宽度就行*/
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #3d4451;
 }
