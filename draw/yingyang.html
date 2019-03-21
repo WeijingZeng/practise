@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>A Spin Yingyang </title>
+    <style>
+        body{
+            background-color: #444;
+        }
+        #yingyang{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(to bottom, rgba(0,0,0,1) 0%,rgba(0,0,0,1) 50%,rgba(0,0,0,1) 50%,rgba(255,255,255,1) 50%,rgba(255,255,255,1) 100%); 
+            position: relative;
+            margin: 100px auto ;
+            animation: spin 3s linear infinite;
+        }
+        #yingyang::before{
+            content:'';
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 40px solid black;
+            background:white;
+            position: absolute;
+            top: 50px;
+        }
+        #yingyang::after{
+            content:'';
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 40px solid white;
+            background:black;
+            position: absolute;
+            top: 50px;
+            left:100px;
+        }
+        @keyframes spin{
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="yingyang"></div>
+</body>
+</html>
