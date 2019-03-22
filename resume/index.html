@@ -87,30 +87,80 @@
       <p class="introduction">I am a newly graduated student who is passionate about web development and want to grow in this industry eagerly. When I was at school, I concentrated on web development that focuses on front-end and back-end. I familiar with HTML, CSS, JavaScript, MySQL, MongoDB, and Java as well. 
       </p>
     </main>
-    <section>
+    <section class="skills">
       <h2>Professional Skills</h2>
-      <ol>
-        <li>HTML 5 & css</li>
-        <li>Javascript</li>
-        <li>jQuery</li>
-        <li>Vue</li>
-        <li>React</li>
-        <li>HTTP</li>    
+      <ol class="skillCard clearfix">
+        <li>
+          <h3>HTML5 & CSS3</h3>
+          <div class="progressBar">
+            <div class="progress" style="width: 85%"></div>
+          </div>
+        </li>
+        <li>
+            <h3>Javascript</h3>
+            <div class="progressBar">
+              <div class="progress" style="width: 70%"></div>
+            </div>
+        </li>
+        <li>
+            <h3>jQuery</h3>
+            <div class="progressBar">
+              <div class="progress" style="width: 70%"></div>
+            </div>
+        </li>
+        <li>
+            <h3>Vue</h3>
+            <div class="progressBar">
+              <div class="progress" style="width: 40%"></div>
+            </div>
+        </li>
+        <li>
+            <h3>React</h3>
+            <div class="progressBar">
+              <div class="progress" style="width: 60%"></div>
+            </div>
+        </li>
+        <li>
+            <h3>Node.js</h3>
+            <div class="progressBar">
+              <div class="progress" style="width: 80%"></div>
+            </div>
+        </li>    
       </ol>
     </section>
-    <section>
+    <section class="portfolio">
       <h2>Portfolio</h2>
       <nav>
-        <ol>
-          <li>All</li>
-          <li>Frame</li>
-          <li>JS</li>
+        <ol class="portfolioCard clearfix">
+          <li id="portfolioAll">All</li>
+          <li id="portfolioFrame">Framework</li>
+          <li id="portfolioVanilla">Vanilla JS</li>
         </ol>
+        <div id="portfolioBar" class="bar status-1">
+          <div class="barSwitch"></div>
+        </div>
       </nav>
-      <div class="jobs">
-        <div class="big"></div>
-        <div class="small"></div>
-        <div class="small"></div>
+      <script>
+        portfolioAll.onclick = function(){
+          portfolioBar.className = 'bar status-1'
+        }
+        portfolioFrame.onclick = function(){
+          portfolioBar.className = 'bar status-2'
+        }
+        portfolioVanilla.onclick = function(){
+          portfolioBar.className = 'bar status-3'
+        }
+      </script>
+      <div class="works" style="height: 597px;">
+        <div class="big" style="top: 0; left: 0;">
+          <img src="./img/img2.JPEG" width="597" height="597" alt="DemoPic1">
+        </div>
+        <div class="small" style="top: 0; left: 645px;">
+          <img src="./img/img3.JPEG" width="293" height="293" alt="DemoPic2">
+        </div>
+        <div class="small" style="top: 304px; left: 645px;">
+          <img src="./img/img1.JPEG" width="293" height="293" alt="DemoPic3">
+        </div>
       </div>
     </section>
 </body>		

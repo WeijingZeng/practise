@@ -24,14 +24,16 @@ hr{ /*重写hr样式*/
     border-top: 1px solid #dedede;
 }
 
+ul,ol{
+    list-style: none; /*消除默认列表的样式*/
+}
+
 .icon {
     width: 1em; height: 1em;
     vertical-align: -0.15em;
     fill: currentColor;
     overflow: hidden;
  }
-
-
 
 .topNavBar{
     padding-top: 20px; /*使navbar整体向下移动*/
@@ -54,7 +56,6 @@ hr{ /*重写hr样式*/
 }
 
 .topNavBar nav>ul{
-    list-style: none; /*消除列表的bullet point*/
     margin: 0; /*margin:外边距 除了div和span其他标签都有默认样式*/
     padding: 0; /*padding:内边距 消除margin和padding的默认样式*/
 }
@@ -229,4 +230,122 @@ body > main .introduction{
     font-size: 18px;
     line-height: 1.8;
     color: #3d4451;
+}
+
+section.skills,
+section.portfolio{
+    max-width: 940px;/*和上面usercard的宽度要一致，所以直接copy usercard的宽度就行*/
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 60px;
+}
+section.skills>h2,
+section.portfolio>h2{
+    text-align: center;
+    color: #3d4451;
+    line-height: 1.2;
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+section .skillCard{
+    background: #FFF;
+    box-shadow: 0px 3px 6px 0px rgba(0,0,0,0.2);
+    padding: 42px 50px 10px;
+}
+
+section .skillCard>li{
+    float: left;
+    width: 48%;
+    /*
+    box-sizing: border-box; //在设置了宽度的情况下再加padding会超出容器的范围，这时 bix-sizing：border-box 让 width：50% 为计算后的50%，也就是padding也算入其中
+    padding-right: 40px;
+    //但是这样做的问题是：我们只想让两个进度条中间增加间隔，但是现在每个进度条的右边都加了间距，使得右边进度条和边框的间距也增大 */
+}
+
+/* 为解决上述问题可以让右边的 双数元素 向右浮动 */
+section .skillCard>li:nth-child(even){
+    float: right;
+}
+
+section .skillCard>li>h3{
+    font-size: 14px;
+    color: #7b7c7e;
+    line-height: 1.1;
+    padding-right: 40px;
+    font-weight: normal;
+}
+
+section .progressBar{
+    height: 5px;
+    background: #e7daf1;
+    border-radius: 2px;
+    margin: 4px 0 36px;
+}
+
+section .progressBar .progress{
+    height: 100%;
+    background: #c88ef7;
+    border-radius: 2px;
+}
+
+section.portfolio{
+    text-align: center;
+}
+
+section.portfolio nav{
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 50px;
+}
+
+section .portfolioCard>li{
+    float: left;
+    margin-left: 40px;
+    cursor: pointer; /* ‘手型’鼠标样式 */
+}
+
+section .portfolioCard>li:nth-child(1){
+    margin-left: 0;
+}
+
+section.portfolio nav .bar{
+    height: 5px;
+    background: #fff;
+    border-radius: 2px;
+}
+
+section.portfolio nav .bar>.barSwitch{
+    height: 100%;
+    width: 20%;
+    background: #c88ef7;
+    margin-top: 5px;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
+section.portfolio nav .bar.status-1>.barSwitch{
+    width: 40px;
+    margin-left: 0px;
+}
+
+section.portfolio nav .bar.status-2>.barSwitch{
+    width: 85px;
+    margin-left: 56px;
+}
+
+section.portfolio nav .bar.status-3>.barSwitch{
+    width: 70px;
+    margin-left: 180px;
+}
+
+section.portfolio .works{
+    position: relative;
+    margin-bottom: 40px;
+}
+
+section.portfolio .works > .big,
+section.portfolio .works > .small{
+    position: absolute;
 }
