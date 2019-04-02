@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+kbd{
+    border: 1px solid red;
+    width: 4em; /*4个键位*/
+    height: 4em;
+    display: inline-block; /*kbd是内联元素，改成inline-block后宽高才有用*/
+    text-transform: uppercase; /*小写改大写*/
+    position: relative;
+}
+
+/*让编辑按钮显示在按键的右下角*/
+kbd > button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: none;
+}
+/*当鼠标悬浮在按键上才显示按钮*/
+kbd:hover > button{
+    display: inline-block;
+}
+
+#container > div:nth-child(2){
+    margin-left: 1em;
+}
+#container > div:nth-child(3){
+    margin-left: 4em;
+}
+
+/*让键盘居中*/
+/*一般两种办法：1.变成内联元素，在它的父元素上加text-align：center；2.变成宽度确定的块级元素(不是很好的方法)*/
+/*1.*/
+#container{
+    display: inline-block;
+}
+main{
+    text-align: center;
+}

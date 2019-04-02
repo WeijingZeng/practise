@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>My Nav</title>
+</head>
+<body>
+    <header></header>
+    <main>
+        <div id="container" class="wrapper"></div>
+    </main>
+    <footer></footer>
+    <script>
+         keys = {
+            0:['q','w','e','r','t','y','u','i','o','p'],
+            1:['a','s','d','f','g','h','j','k','l'],
+            2:['z','x','c','v','b','n','m'],
+            length:3
+        }
+         hash = {
+            q: 'quora.com',
+            w: 'weibo.com',
+            e: 'ele.me',
+            r: 'renren.com',
+            t: 'taobao.com',
+            y: 'youtube.com',
+            u: 'udemy.com',
+            i: 'iqiyi.com',
+            o: undefined,
+            p: 'pinterest.com',
+            a: 'amazon.com',
+            s: 'sina.com',
+            d: 'douban.com',
+            f: 'facebook.com',
+            g: 'google.com',
+            h: 'hotmail.com',
+            j: 'js.jirengu.com',
+            k: 'kanzhun.com',
+            l: 'leetcode.com',
+            z: 'zhihu.com',
+            x: 'xiedaimala.com',
+            c: 'cnn.com',
+            v: 'visualgo.net',
+            b: 'bilibili.com',
+            n: 'netflix.com',
+            m: 'mail.google.com'
+        }
+        //获取用户存储在浏览器中的更改项
+         hashLocalStorage = JSON.parse(localStorage.getItem('userSites' || 'null'))
+        //如果存在则更新本地hash列表
+        if(hashLocalStorage){
+            hash = hashLocalStorage
+        }
+        
+        //遍历keys，生成kbd标签
+        lines = 0
+        while(lines < keys['length']){
+            row = document.createElement('div')
+            container.appendChild(row)
+            count = 0
+            while(count < keys[lines].length){
+                keyboards = document.createElement('kbd')
+                keyboards.textContent = keys[lines][count]
+                row.appendChild(keyboards)
+
+                buttons = document.createElement('button')
+                buttons.textContent = 'Edit'
+                //给每个button对应的id，之后才能在点击时取到对应的button
+                buttons.id = keys[lines][count]
+                keyboards.appendChild(buttons)
+                buttons.onclick = function(haha){
+                   target = haha.target.id
+                   //弹窗提示输入
+                   newSite = prompt('Enter a new URL')
+                   if(newSite){
+                       hash[target] = newSite
+                       //一旦用户做出更改，就将用户的更改存储在浏览器localStorage中的‘userSites’桶里
+                       localStorage.setItem('userSites',JSON.stringify(hash))
+                       console.log(hash)
+                    }
+                }
+
+                count = count+1
+            }
+            lines = lines+1
+        }
+
+
+        //按键后跳转到相应网站
+        document.onkeypress = function(lol){
+            key = lol.key
+            website = hash[key]
+            //在当前页面跳转
+            //location.href = 'http://'+website
+            //在新标签打开
+            window.open('http://'+website, '_blank')
+
+        }
+    </script>
+</body>
+</html>
