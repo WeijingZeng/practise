@@ -1,0 +1,3 @@
+# practise
+Resume Preview（预览）：https://weijingzeng.github.io/practise/resume/index.html
+Nav-demo Preview（预览）：https://weijingzeng.github.io/practise/nav-demo/index.html
