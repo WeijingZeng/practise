@@ -57,10 +57,12 @@
         lines = 0
         while(lines < keys['length']){
             row = document.createElement('div')
+            row.className = 'rowDiv'
             container.appendChild(row)
             count = 0
             while(count < keys[lines].length){
                 keyboards = document.createElement('kbd')
+                keyboards.className= 'key';
                 keyboards.textContent = keys[lines][count]
                 row.appendChild(keyboards)
 

@@ -7,13 +7,58 @@ a{
     text-decoration: none;
 }
 
+body{
+    background: #f67675;
+}
+
+/*让键盘居中*/
+/*一般两种办法：1.变成内联元素，在它的父元素上加text-align：center；2.变成宽度确定的块级元素(不是很好的方法)*/
+/*1.*/
+#container{
+    display: inline-block;
+    padding: 10px 5px;
+    border-radius: 8px;
+    background: rgba(192,199,201,1);
+    box-shadow: 0px 10px 0px -4px rgba(92,109,122,1);
+}
+
+main{
+    /*让main和屏幕同高*/
+    height: 100vh; /*vh: viewport height*/
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container > div:nth-child(2){
+    margin-left: -22px;
+}
+#container > div:nth-child(3){
+    margin-left: -80px;
+}
+
 kbd{
-    border: 1px solid red;
-    width: 4em; /*4个键位*/
-    height: 4em;
     display: inline-block; /*kbd是内联元素，改成inline-block后宽高才有用*/
     text-transform: uppercase; /*小写改大写*/
     position: relative;
+}
+
+kbd.key{
+    background: #f9f9fa;
+    border: none;
+    color: #5c6d7a;
+    width: 60px;
+    height: 60px;
+    font-family: sans-serif;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 0px 0px rgba(153,156,157,1);
+    /*让字体居中*/
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 5px;
 }
 
 /*让编辑按钮显示在按键的右下角*/
@@ -28,19 +73,6 @@ kbd:hover > button{
     display: inline-block;
 }
 
-#container > div:nth-child(2){
-    margin-left: 1em;
-}
-#container > div:nth-child(3){
-    margin-left: 4em;
-}
-
-/*让键盘居中*/
-/*一般两种办法：1.变成内联元素，在它的父元素上加text-align：center；2.变成宽度确定的块级元素(不是很好的方法)*/
-/*1.*/
-#container{
-    display: inline-block;
-}
-main{
-    text-align: center;
+div.rowDiv{
+    margin: 10px;
 }
