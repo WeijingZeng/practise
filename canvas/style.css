@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#cvsContainer{
+    background: rosybrown;
+}
+
+.action, .actionX{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
+
+.action > #brush{
+    display: none;
+}
+
+.actionX > #brush{
+    display: inline-block;
+}
+
+.actionX > #eraser{
+    display: none;
+}
+
+button#clean{
+    position: fixed;
+    left: 60px;
+    bottom: 0;
+}
