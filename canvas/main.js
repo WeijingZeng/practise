@@ -25,18 +25,70 @@ function cleanAll(){
 
 var eraserEnabled = false;
 eraser.onclick = function(){
- eraserEnabled = true
- actions.className = "actionX"
+    eraserEnabled = true
+    eraser.classList.add('active')
+    brush.classList.remove('active')
+    clean.classList.remove('active')
+    red.classList.remove('active')
+    green.classList.remove('active')
+    blue.classList.remove('active')
 }
 
 brush.onclick = function(){
     eraserEnabled = false
-    actions.className = "action"
+    context.strokeStyle = 'black'
+    brush.classList.add('active')
+    eraser.classList.remove('active')
+    clean.classList.remove('active')
+    red.classList.remove('active')
+    green.classList.remove('active')
+    blue.classList.remove('active')
 }
 
 clean.onclick = function(){
     cleanAll()
+    eraserEnabled = true
+    clean.classList.add('active')
+    eraser.classList.remove('active')
+    brush.classList.remove('active')
+    red.classList.remove('active')
+    green.classList.remove('active')
+    blue.classList.remove('active')
 }
+
+red.onclick = function(){
+    eraserEnabled = false
+    context.strokeStyle = 'darkred';
+    red.classList.add('active')
+    brush.classList.add('active')
+    green.classList.remove('active')
+    blue.classList.remove('active')
+    eraser.classList.remove('active')
+    clean.classList.remove('active')
+}
+
+green.onclick = function(){
+    eraserEnabled = false
+    context.strokeStyle = 'darkgreen';
+    green.classList.add('active')
+    brush.classList.add('active')
+    red.classList.remove('active')
+    blue.classList.remove('active')
+    eraser.classList.remove('active')
+    clean.classList.remove('active')
+}
+
+blue.onclick = function(){
+    eraserEnabled = false
+    context.strokeStyle = 'steelblue';
+    blue.classList.add('active')
+    brush.classList.add('active')
+    red.classList.remove('active')
+    green.classList.remove('active')
+    eraser.classList.remove('active')
+    clean.classList.remove('active')
+}
+
 
 //判断设备是否支持触碰，如果支持则监听touch事件，否则监听mouse事件
 if(document.body.ontouchstart !== undefined){

@@ -10,10 +10,23 @@
 <body>
     <canvas id="cvsContainer"></canvas>
     <div id="actions" class="action">
-        <button id="eraser">Eraser</button>
-        <button id="brush">Brush</button>
+        <svg class="icon">
+            <use id="brush" class="active" xlink:href="#icon-brush1"></use>
+        </svg>
+        <svg class="icon">
+            <use id="eraser" xlink:href="#icon-eraser"></use>
+        </svg>
+        <svg class="icon">
+            <use id="clean" xlink:href="#icon-trash"></use>
+        </svg>
     </div>
-    <button id="clean">CleanAll</button>
+    <ol class="palette">
+        <li id="red" class="red"></li>
+        <li id="green" class="green"></li>
+        <li id="blue" class="blue"></li>
+    </ol>
+    <!-- <button id="clean">CleanAll</button> -->
 </body>
 <script src="./main.js"></script>
+<script src="//at.alicdn.com/t/font_1138406_ucquvk86o7m.js"></script>
 </html>

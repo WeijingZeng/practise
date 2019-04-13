@@ -3,30 +3,74 @@ body{
     padding: 0;
 }
 
-#cvsContainer{
-    background: rosybrown;
+ol, li{
+    list-style: none;
+    padding: 0;
 }
 
-.action, .actionX{
+#cvsContainer{
+    background: white;
+}
+
+.icon {
+    width: 1em; height: 1em;
+    vertical-align: -0.15em;
+    fill: currentColor;
+    overflow: hidden;
+    display: inline-block;
+ }
+
+.action{
     position: fixed;
     left: 0;
-    bottom: 0;
+    top: 0;
+    padding: 10px 10px;
 }
 
-.action > #brush{
-    display: none;
+.action > svg{
+    width: 1.5em;
+    height: 1.5em;
 }
 
-.actionX > #brush{
-    display: inline-block;
+.action > svg > .active{
+    fill: burlywood;
+    transform: scale(1.2);
+    transition: all 0.3s;
 }
 
-.actionX > #eraser{
-    display: none;
-}
-
-button#clean{
+ol.palette{
+    top: 20px;
+    left: 12px;
     position: fixed;
-    left: 60px;
-    bottom: 0;
+}
+
+ol.palette > li{
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    margin: 10px 0;
+}
+
+ol.palette > li.red{
+    background: darkred;
+}
+
+ol.palette > li.green{
+    background: darkgreen;
+}
+
+ol.palette > li.blue{
+    background: steelblue;
+}
+
+ol.palette > li.red.active{
+    border: 1.5px solid rgb(214, 64, 64);
+}
+
+ol.palette > li.green.active{
+    border: 1.5px solid rgb(49, 143, 49);
+}
+
+ol.palette > li.blue.active{
+    border: 1.5px solid rgb(110, 153, 209);
 }
