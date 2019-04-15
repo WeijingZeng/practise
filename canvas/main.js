@@ -93,7 +93,7 @@ if(document.body.ontouchstart !== undefined){
         using = true
         var x = start.touches[0].clientX
         var y = start.touches[0].clientY
-        lastPoint = {x: x, y:y}
+        lastPoint = {x:x, y:y}
     }
     cvs.ontouchmove = function(move){
         if(using){
