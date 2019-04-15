@@ -16,13 +16,6 @@ function drawLine(x1,y1,x2,y2){
     context.closePath()
 }
 
-function cleanAll(){
-    var cvs = document.getElementById('cvsContainer')
-    var context = cvs.getContext('2d')
-    cvs.width = document.documentElement.clientWidth
-    cvs.height = document.documentElement.clientHeight
-}
-
 var eraserEnabled = false;
 eraser.onclick = function(){
     eraserEnabled = true
@@ -46,14 +39,18 @@ brush.onclick = function(){
 }
 
 clean.onclick = function(){
-    cleanAll()
-    eraserEnabled = true
-    clean.classList.add('active')
-    eraser.classList.remove('active')
-    brush.classList.remove('active')
-    red.classList.remove('active')
-    green.classList.remove('active')
-    blue.classList.remove('active')
+    context.clearRect(0, 0, cvs.width, cvs.height)
+}
+
+download.onclick = function(){
+    //将画板作为img，通过<a>标签保存
+    var url = cvs.toDataURL("image/png")
+    var anchor = document.createElement('a')
+    document.body.appendChild(anchor)
+    anchor.href = url;
+    anchor.download = 'myMasterpiece'
+    anchor.target = '_blank'
+    anchor.click()
 }
 
 red.onclick = function(){
