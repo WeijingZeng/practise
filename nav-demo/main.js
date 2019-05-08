@@ -113,7 +113,7 @@ function createButton(bID){
        var newSite = prompt('Enter a new URL')
        if(newSite){
            hash[target] = newSite
-           //一旦用户做出更改，就将用户的更改存储在浏览器localStorage中的‘userSites’桶里
+           //一旦用户做出更改，就将用户的更改存储在浏览器localStorage中的‘userSites’桶里，这样做是因为用户更改的hash在网页刷新后就不存在了，所以需要存在浏览器中，刷新页面后看有无更改，有则更新本地hash
             localStorage.setItem('userSites',JSON.stringify(hash))
            //clickedButton.previousSibling: 定位到被点击的button的上一个元素，也就是<img>  
            var icon2 = generateIcon(newSite,clickedButton.previousSibling)           
