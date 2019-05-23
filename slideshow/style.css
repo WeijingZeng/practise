@@ -1,0 +1,13 @@
+.frame{
+    width: 400px;
+    overflow: hidden; /*如果超过frame的用户就看不见*/
+}
+
+.images{
+    display: flex;
+    transition: transform 0.5s;
+}
+
+.highlight{
+    background: lightpink;
+}
