@@ -36,14 +36,14 @@ var n = 0
 var imgs = $('.images > img')
 var size = imgs.length
 
-allButtons.eq(n % size).trigger('click').addClass('highlight').siblings('.highlight').removeClass('highlight')
+allButtons.eq(n % size).trigger('click')
 autoPlay()
 
 //鼠标移入控制暂停播放
-$('.frame').on('mouseenter', function(){
+$('.images').on('mouseenter', function(){
     window.clearInterval(timeID)
 })
-$('.frame').on('mouseleave',function(){
+$('.images').on('mouseleave',function(){
     autoPlay()
 })
 
@@ -54,6 +54,6 @@ function autoPlay(){
         //eq(条件) -- 找到符合条件的DOM后封装成jQuery对象
         //triggre() -- 触发事件
         //siblings('.highlight') -- 找到兄弟结点中 class=highlight 的
-        allButtons.eq(n % size).trigger('click').addClass('highlight').siblings('.highlight').removeClass('highlight')
+        allButtons.eq(n % size).trigger('click')
     }, 2000)
 }
