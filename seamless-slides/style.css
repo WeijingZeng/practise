@@ -1,0 +1,29 @@
+ *{margin: 0; padding: 0;}
+ *{box-sizing: border-box;}
+
+ .frame{
+    width: 400px;
+    height: 300px;
+    margin: 20px auto; /*居中*/
+    overflow: hidden;
+ }
+ .images{
+     position: relative;
+ }
+ .images>img{
+     width: 100%; /*图片跟父元素一样宽*/
+     position: absolute;
+     transition: all 0.3s;
+     top: 0;
+ }
+ .images>img.current{ /*current -- 展示中的状态*/
+     left: 0;
+     transform: translateX(0);
+     z-index: 1;
+ }
+ .images>img.leave{ /*leave -- 向左移出的状态*/
+     transform: translateX(-100%);
+}
+.images>img.enter{ /*enter -- 从右进入的状态*/
+     transform: translateX(100%);
+}
